@@ -1,0 +1,17 @@
+{
+  "name": "high-speed-rail",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/jhowliu/high-speed-rail.git",
+  "author": "jhow",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "require-dir": "^0.3.2"
+  }
+}
