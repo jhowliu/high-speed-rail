@@ -21,7 +21,8 @@ router.post('/', (req, res) => {
     startStation: startStation,
     endStation: endStation
   }).then( (resp) => {
-    res.send({ success: true, msg: 'Fetch successfully.', data: resp.data });
+    const result = Train.filterSchedule(resp.data, datetime.time);
+    res.send({ success: true, msg: 'Fetch successfully.', data: result });
   }).catch( (err) => {
     res.send({ success: false, msg: 'Failed to request rail schedule.', err: err.toString() });
   })
