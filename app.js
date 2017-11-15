@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const requireDir = require('require-dir');
 const cors = require('cors');
 
-const Parser = require('./lib/dateParser');
+const Parser = require('./lib/parser');
 const Train = require('./lib/train');
 
 const app = express();
@@ -24,12 +24,9 @@ const THSR = require('./routes/THSR');
 app.use('/THSR', THSR);
 
 app.get('/', (req, res) => {
-    res.sendStatus(200);
+  res.sendStatus(200);
 });
 
 app.listen(app.get('port'), () => {
   console.log('The application is listen on port '+app.get('port'));
-  let requestTime = '2017111114';
-  const obj = Parser.parse(requestTime);
-  console.log(Train.requestSchedule({'startStation': '1000', 'endStation': '1040', date: obj.date }))
 });
