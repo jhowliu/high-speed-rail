@@ -8,6 +8,7 @@ const manifest = requireDir('../manifest');
 const router = express.Router();
 
 router.post('/', (req, res) => {
+  console.log('=== INCOMING REQUEST ===\n' + JSON.stringify(req.body, null, '  '));
   let startStation = req.body.startStation || req.query.startStation;
   let endStation = req.body.endStation || req.query.endStation;
   let departureTime = req.body.departureTime || req.query.departureTime;
@@ -22,6 +23,7 @@ router.post('/', (req, res) => {
     endStation: endStation
   }).then( (resp) => {
     const result = Train.filterSchedule(resp.data, departureTime.time);
+    console.log('=== RESPONSE === \n' + JSON.stringify(result, null, '  '));
     res.send({ success: true, msg: 'Fetch successfully.', data: result });
   }).catch( (err) => {
     res.send({ success: false, msg: 'Failed to request rail schedule.', err: err.toString() });

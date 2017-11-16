@@ -1,0 +1,5 @@
+{
+  "THSR" : {
+    "api" : "http://ptx.transportdata.tw/MOTC/v2/Rail/THSR/DailyTimetable/OD"
+  }
+}
