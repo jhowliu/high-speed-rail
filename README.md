@@ -1,7 +1,7 @@
 # high-speed-rail
 
 
-Using [MOTC api](http://ptx.transportdata.tw/MOTC/Swagger/)
+Using [交通部PTX平臺](http://ptx.transportdata.tw/MOTC/Swagger/)
 
 - [HMAC authentication](https://github.com/Caligatio/jsSHA)
 
@@ -30,3 +30,8 @@ response: {
     ]
 }
 </pre>
+
+
+## Reference
+
+本服務資料介接「交通部PTX平臺」
